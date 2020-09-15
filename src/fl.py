@@ -17,7 +17,7 @@ import torchvision
 from utils.options import parse_args
 from data.data_utils import get_cifar10, DatasetSplit,random_avg_strategy, get_cifar100
 from utils.tools import save_logs, save_cifar100_logs, setup_seed
-from utils.function import random_assign, weight_assign
+from utils.function import random_assign
 from models.resnet import ResNet18, ResNet34
 from models.vgg import get_vgg16
 from utils.evaluation import save_measure, test_inference, test_inference4cifar100 

@@ -142,33 +142,6 @@ class ResNet18_Classifer(nn.Module):
 
 
 
-"larger extractor"
-# class ResNet18_Extractor(nn.Module):
-#     def __init__(self):
-#         super(ResNet18_Extractor, self).__init__()
-#         self.layer0 = ResInputLayer()
-#         self.layer1 = ResBlockLayer(BasicBlock, 64, 2, 1, 64)
-#         self.layer2 = ResBlockLayer(BasicBlock, 128, 2, 2, 64)
-#         self.layer3 = ResBlockLayer(BasicBlock, 256, 2, 2, 128)
-#     def forward(self, x):
-#         out = self.layer0(x)
-#         out = self.layer1(out)
-#         out = self.layer2(out)
-#         out = self.layer3(out)
-#         return out
-
-
-# class ResNet18_Classifer(nn.Module):
-#     def __init__(self, num_classes=10):
-#         super(ResNet18_Classifer, self).__init__()
-#         self.layer1 = ResBlockLayer(BasicBlock, 512, 2, 2, 256)
-#         self.layer2 = ResOutputLayer(BasicBlock, num_classes)
-
-#     def forward(self, x):
-#         out = self.layer1(x)
-#         out = self.layer2(out)
-#         return out
-
 class ResNet34_Extractor(nn.Module):
     def __init__(self):
         super(ResNet34_Extractor, self).__init__()
@@ -193,37 +166,6 @@ class ResNet34_Classifer(nn.Module):
         out = self.layer2(out)
         out = self.layer3(out)
         return out
-
-
-# class ResNet34_Extractor(nn.Module):
-#     def __init__(self):
-#         super(ResNet34_Extractor, self).__init__()
-#         self.layer0 = ResInputLayer()
-#         self.layer1 = ResBlockLayer(BasicBlock, 64, 3, 1, 64)
-#         self.layer2 = ResBlockLayer(BasicBlock, 128, 4, 2, 64)
-#     def forward(self, out):
-#         out = self.layer0(out)
-#         out = self.layer1(out)
-#         out = self.layer2(out)
-#         return out
-
-
-# class ResNet34_Classifer(nn.Module):
-#     def __init__(self, num_classes=10):
-#         super(ResNet34_Classifer, self).__init__()
-        
-#         self.layer1 = ResBlockLayer(BasicBlock, 256, 6, 2, 128)
-#         self.layer2 = ResBlockLayer(BasicBlock, 512, 3, 2, 256)
-#         self.layer3 = ResOutputLayer(BasicBlock, num_classes)
-#     def forward(self, out):
-        
-#         out = self.layer1(out)
-#         out = self.layer2(out)
-#         out = self.layer3(out)
-#         return out
-
-
-
 
 
 

@@ -38,7 +38,6 @@ def get_cifar10(balanced=False, remain_flag=False):
         return trainset, testset
     else:
         trainset = IMBALANCECIFAR10(root='../data', train=True, download=True, transform=transform_train)
-        #testset = IMBALANCECIFAR10(root='../data', train=False, download=True, transform=transform_test)
         testset = datasets.CIFAR10(root='../data', train=False, download=True, transform=transform_test)
         if remain_flag:
             remain_data, remain_labels = trainset.get_remain_data()
@@ -74,7 +73,6 @@ def get_cifar100(balanced=False, remain_flag=False):
         return trainset, testset
     else:
         trainset = IMBALANCECIFAR100(root='../data', train=True, download=True, transform=transform_train)
-        #testset = IMBALANCECIFAR10(root='../data', train=False, download=True, transform=transform_test)
         testset = datasets.CIFAR100(root='../data', train=False, download=True, transform=transform_test)
         if remain_flag:
             remain_data, remain_labels = trainset.get_remain_data()

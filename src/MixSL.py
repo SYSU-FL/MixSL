@@ -17,7 +17,7 @@ import torchvision
 from utils.options import parse_args
 from data.data_utils import get_cifar10, DatasetSplit, random_avg_strategy, count_class_num_per_client, get_cifar100
 from utils.tools import save_logs, save_cifar100_logs, setup_seed, write_file
-from utils.function import random_assign, weight_assign, naive_assign, compute_dcor
+from utils.function import random_assign
 from models.resnet import ResNet18_Extractor, ResNet18_Classifer, ResNet34_Extractor, ResNet34_Classifer
 from models.vgg import get_split_vgg16
 from utils.evaluation import test_inference4split, test_inference4split4cifar100
@@ -68,7 +68,7 @@ class Client(object):
             lam_yss.append(lam_ys)
             if i == 0:
                 label_tuples.append(y_a)
-            label_tuples.append(y_b)
+            label_tuples.append(y_b)# due to PyTorch, the current implementation is the same as M-hot Matrix
             x_ = mixed_x
             y_ = self._max_labels(y_a, y_b, lam_ys)
         return mixed_x, label_tuples, lam_yss

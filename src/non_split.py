@@ -16,7 +16,7 @@ import torchvision
 from utils.options import parse_args
 from data.data_utils import get_cifar10, DatasetSplit, random_avg_strategy, get_cifar100
 from utils.tools import save_logs, save_cifar100_logs, setup_seed
-from utils.function import random_assign, weight_assign
+from utils.function import random_assign
 from models.resnet import ResNet18, ResNet34
 from models.vgg import get_vgg16
 
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     trainloader = DataLoader(train_dataset, batch_size=args.local_bs, shuffle=True)
     optimizer = torch.optim.SGD(net.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=1e-5)
     net.train()
-    #measure_logs = []
+    
     pre_model = copy.deepcopy(net)
     for epoch in range(args.epochs):
         for batch_idx, (images, labels) in enumerate(trainloader):
@@ -64,7 +64,7 @@ if __name__ == "__main__":
                 print(f"epoch: {epoch}, Loss: {loss}")
             loss.backward()
             optimizer.step()
-        #measure_logs.append(get_w_diff(net, pre_model))
+        
         if args.cifar100:
             test_acc1, test_acc5, test_loss = test_inference4cifar100(args, net, test_dataset)
             print(f"|----Test Loss: {test_loss}, Test Accuracy_correct1: {100*test_acc1}%, Test Accuracy_correct5: {100*test_acc5}%")
@@ -73,7 +73,7 @@ if __name__ == "__main__":
                 'test_acc5': "{:.2f}%".format(100*test_acc5),
                 'loss': test_loss,
                 'epoch': epoch 
-                #'num_batch':num_batch
+                
                 }
             logs.append(log_obj)
         else:
@@ -83,13 +83,13 @@ if __name__ == "__main__":
                 'test_acc': "{:.2f}%".format(100*test_acc),
                 'loss': test_loss,
                 'epoch': epoch 
-                #'num_batch':num_batch
+                
                 }
             logs.append(log_obj)
     if args.cifar100:
         save_cifar100_logs(logs, TAG, args)
     else:
         save_logs(logs, TAG,  args)
-    #save_measure(measure_logs, TAG)
+    
 
     

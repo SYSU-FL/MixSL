@@ -50,17 +50,6 @@ class VggLayer(nn.Module):
 def get_split_vgg16(num_classes=10):
     node_cfg_0 = [64, 64, 'M', 128, 128, 'M']
     node_cfg_1 = [256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512, 'M']
-    # way1
-    #node_cfg_0 = [64, 64, 'M']
-    #node_cfg_1 = [128, 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512, 'M']
-    # way2
-    #node_cfg_0 = [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'M']
-    #node_cfg_1 = [512, 512, 512, 'M', 512, 512, 512, 'M']
-    # way3
-    #node_cfg_0 = [64, 64, 'M', 128]
-    #node_cfg_1 = [ 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512, 'M']
-    #node_cfg_0 = [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M']
-    #node_cfg_1 = [512, 512, 512, 'M']
     layer0 = VggLayer(node_cfg_0)
     layer1 = VggLayer(node_cfg_1, node_cfg_0[-1] if node_cfg_0[-1] != 'M' else node_cfg_0[-2], last_flag=True, num_classes=num_classes)
     return layer0, layer1
