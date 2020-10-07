@@ -15,7 +15,7 @@ def save_logs(logs, tag, args):
     df.to_csv(path, mode='a',index_label='index')
     df['test_acc'] = df['test_acc'].apply(lambda x: float(x.replace('%', '')))
     print(f"final Accuracy: {df.loc[:,'test_acc'].max()}")
-    print("save logs sucess!")
+    print("save logs success!")
 
 def save_cifar100_logs(logs, tag, args):
     df = pd.DataFrame(logs)
