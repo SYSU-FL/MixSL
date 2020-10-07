@@ -1,6 +1,6 @@
 
 
-## Coder4AAAI2021 
+## Code4AAAI2021 
 > https://github.com/SYSU-FL/MixSL.git
 ### Non-Split algorithm
 > 'python non_split.py --gpu 0 --name yourname' or 'python non_split.py --gpu 0 --name yourname --cifar100'
