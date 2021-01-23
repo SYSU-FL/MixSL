@@ -33,3 +33,18 @@
 > + --cifar100. Training models on CIFAR-100
 > + --google_split. Partitioning data using the strategy introduced in google's paper.
 > + --model. Assgining model. E.g., --model ResNet18
+
+---
+## Privacy-Preserving Experiments
+![avatar](results/Figures/Distance%20correlation%20comparison%20with%20baselines(ResNet-18,%20Imbalanced-CIFAR-10).png)
+
+**Fig.1 performance comparison with baselines**
+
+
+## Data Reconstruction Experiments
+![avatar](results/reconstruction/3-labels-mixsl-reconstruction.png)
+**Fig.2 Case of data reconstraction (activations output from models trained by 3-labels MixSL)**
+![avatar](results/reconstruction/4-labels-mixsl-reconstruction.png)
+**Fig.3 Case of data reconstraction (activations output from models trained by 4-labels MixSL)**
+![avatar](results/reconstruction/5-labels-mixsl-reconstruction.png)
+**Fig.4 Case of data reconstraction (activations output from models trained by 5-labels MixSL)**
