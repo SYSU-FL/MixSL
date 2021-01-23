@@ -2,6 +2,7 @@
 ## Code for Multiple Activations and Labels Mix Mechanism for Split Learning
 ---
 ## Directory of Source Code
+---
 |--**src**\
 |--------**alg**: different algorithms codes\
 |--------**model**: models used to train\
@@ -13,18 +14,27 @@
 |--------**reconstruction**: experimental results of data reconstrution
 
 
+
+##  Get Started
 ---
-##  Main Commend Used To Execute
-> + (non-split algorithm) python non-split.py --gpu 0 --name yourname
-> + (FedAvg algorithm) python fl.py --gpu 0 --name yourname
-> + (SplitNN algorithm) python sl.py --gpu 0 --name yourname
-> + (DP-SL algorithm) python sl.py --gpu  0 --name yourname --dp
-> + (NopeekNN algorithm) python dcor.py --gpu 0 --name yourname
-> + (3-labels MixSL algorithm) python MixSL.py --gpu 0 --name yourname
-> + (m-labels MixSL algorithm) python multi_mixsl.py --gpu 0 --name yourname --mix_num m
-> + (Auto-MixSL algorithm) python auto_multi_mixsl.py --gpu  0 --name yourname --mix_num m
+>  (non-split algorithm) python non-split.py --gpu 0 --name yourname
+
+> (FedAvg algorithm) python fl.py --gpu 0 --name yourname
+
+> (SplitNN algorithm) python sl.py --gpu 0 --name yourname
+
+> (DP-SL algorithm) python sl.py --gpu  0 --name yourname --dp
+
+> (NopeekNN algorithm) python dcor.py --gpu 0 --name yourname
+
+> (3-labels MixSL algorithm) python MixSL.py --gpu 0 --name yourname
+
+> (m-labels MixSL algorithm) python multi_mixsl.py --gpu 0 --name yourname --mix_num m
+
+> (Auto-MixSL algorithm) python auto_multi_mixsl.py --gpu  0 --name yourname --mix_num m
+
 ---
-## Some important configurations
+## Some Important Configurations
 > +  --epochs. The number of epochs to execute. E.g., --epochs 200
 > + --gpu Assigning device (id) to execute programs. E.g., --gpu 0
 > + --name. The file tag to identify experiments. E.g., --name test
@@ -48,3 +58,7 @@
 **Fig.3 Case of data reconstraction (activations output from models trained by 4-labels MixSL)**
 ![avatar](results/reconstruction/5-labels-mixsl-reconstruction.png)
 **Fig.4 Case of data reconstraction (activations output from models trained by 5-labels MixSL)**
+
+## Acknowledge
+---
+We thank (https://github.com/TTitcombe/NoPeekNN)
